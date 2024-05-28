@@ -1,0 +1,8 @@
+assimox-html-documentations/
+.vscode/
+node_modules/
+dev/
+dist/
+cypress
+cypress.config.js
+.htaccess
