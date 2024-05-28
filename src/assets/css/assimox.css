@@ -10477,3 +10477,50 @@ body.boxed-wrapper .main-menu__logo{
 body.boxed-wrapper .why-choose-one__img-1{
   max-width: 55%;
 }
+
+/*Page error 404*/
+.container__not__found {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 0 20px;
+  height: 100vh;
+  gap: 16px;
+  text-align: center;
+}
+
+.error__title {
+  font-size: 4rem;
+  line-height: 12px;
+  font-weight: 600;
+  color: #000;
+  margin-bottom: 32px;
+}
+
+.error__subtitle {
+  font-size: 2rem;
+  line-height: 8px;
+  font-weight: 600;
+  color: #000;
+  margin: 0;
+}
+.image__error {
+  width: 320px;
+}
+.error__description {
+  font-size: 32px;
+  line-height: 32px;
+  font-weight:  700;
+  margin: 0;
+}
+.to__home {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 700;
+  text-decoration: none;
+}
+.to__home:hover {
+  text-decoration: underline;
+  color: #2d2d2d;
+}

@@ -4,7 +4,8 @@
     { "src": "/sobre", "dest": "https://website-reprotec.vercel.app/about.html" },
     { "src": "/servicos", "dest": "https://website-reprotec.vercel.app/services.html" },
     { "src": "/contato", "dest": "https://website-reprotec.vercel.app/contact.html" },
-    { "handle": "filesystem" }
+    { "handle": "filesystem" },
+    { "src": "/.*", "dest": "https://website-reprotec.vercel.app/404.html" }
   ]
 }
 

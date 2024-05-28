@@ -1485,7 +1485,6 @@
         line-height: 46px;
     }
 
-
     .main-slider-two__sub-title {
         padding: 4px 24px 1px;
     }
@@ -1545,6 +1544,10 @@
 
     .main-slider-three__nav {
         display: none;
+    }
+
+    .error__description {
+        font-size: 24px;
     }
 }
 
