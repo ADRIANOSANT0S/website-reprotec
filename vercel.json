@@ -7,9 +7,9 @@
     }
   ],
   "redirects": [
-    { "source": "/", "destination": "/dist/index.html", "statusCode": 200 },
-    { "source": "/sobre", "destination": "/dist/about.html", "statusCode": 200 },
-    { "source": "/servicos", "destination": "/dist/services.html", "statusCode": 200 },
-    { "source": "/contato", "destination": "/dist/contact.html", "statusCode": 200 }
+    { "source": "/", "destination": "/dist/index.html" },
+    { "source": "/sobre", "destination": "/dist/about.html" },
+    { "source": "/servicos", "destination": "/dist/services.html" },
+    { "source": "/contato", "destination": "/dist/contact.html" }
   ]
 }
