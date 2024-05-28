@@ -7,7 +7,7 @@
     }
   ],
   "routes": [
-    { "src": "/", "dest": "https://website-reprotec.vercel.app/" },
+    { "src": "/", "dest": "https://website-reprotec.vercel.app/index.html" },
     { "src": "/sobre", "dest": "https://website-reprotec.vercel.app/about.html" },
     { "src": "/servicos", "dest": "https://website-reprotec.vercel.app/services.html" },
     { "src": "/contato", "dest": "https://website-reprotec.vercel.app/contact.html" },
