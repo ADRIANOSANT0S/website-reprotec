@@ -1,11 +1,4 @@
 {
-  "version": 2,
-  "builds": [
-    {
-      "src": "dist/**/*",
-      "use": "@vercel/static"
-    }
-  ],
   "routes": [
     { "src": "/", "dest": "https://website-reprotec.vercel.app/index.html" },
     { "src": "/sobre", "dest": "https://website-reprotec.vercel.app/about.html" },
