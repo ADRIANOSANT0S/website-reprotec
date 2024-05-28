@@ -6,11 +6,10 @@
       "use": "@vercel/static"
     }
   ],
-  "routes": [
-    { "src": "/", "dest": "/dist/index.html" },
-    { "src": "/sobre", "dest": "/dist/about.html" },
-    { "src": "/servicos", "dest": "/dist/services.html" },
-    { "src": "/contato", "dest": "/dist/contact.html" },
-    { "handle": "filesystem" }
+  "redirects": [
+    { "source": "/", "destination": "/dist/index.html", "statusCode": 200 },
+    { "source": "/sobre", "destination": "/dist/about.html", "statusCode": 200 },
+    { "source": "/servicos", "destination": "/dist/services.html", "statusCode": 200 },
+    { "source": "/contato", "destination": "/dist/contact.html", "statusCode": 200 }
   ]
 }
