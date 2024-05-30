@@ -12,6 +12,7 @@
 # Page Header
 # Google Map
 # Client Carousel
+# Paceiros
 --------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
@@ -68,6 +69,27 @@ a:visited {
   color: #fff;
   font-size: 16px;
   font-weight: 700;
+}
+
+.reprotec__parceiros {
+  padding: 40px 0;
+  width:  100%;
+}
+
+.parceiro__infos {
+  background-color: #F0F4FB;
+  padding: 24px;
+}
+
+.parceiro__text {
+  margin-bottom: 24px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 18px;
+}
+
+.parceiros__image {
+  width: 100%;
 }
 
 /* Size img section project */
@@ -3955,7 +3977,7 @@ ul {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 8px;
-  justify-items: center;
+  justify-items: start;
   float: left;
 }
 
@@ -6154,11 +6176,18 @@ ul {
   padding: 120px 0 112px;
 }
 
-
 .our-mission__two .our-mission__right {
   margin-top: 166px;
 }
 
+
+
+.our-mission__two.padding__top__0 {
+  padding-top: 0 ;
+}
+.padding__top__0 > div {
+  margin-top: 0;
+}
 /*--------------------------------------------------------------
 # Project One
 --------------------------------------------------------------*/
@@ -10296,7 +10325,7 @@ ul {
 }
 
 .services-page__list {
-  padding: 39px 38px 38px;
+  padding: 39px 24px 38px;
   position: relative;
   -ms-flex: 0 0 25%;
   flex: 0 0 25%;
