@@ -559,6 +559,14 @@
     width: 296px;
   }
 
+  .section-title.f-start {
+    padding-left: 32px;
+  }
+
+  .contact-page__btn {
+    font-size: 12px;
+  }
+
   .main-slider__btn {
     font-size: 12px;
   }

@@ -88,6 +88,10 @@ module.exports = function(grunt) {
               replacement: '/servicos'
             },
             {
+              match: /work\.html/g,
+              replacement: '/servicos'
+            },
+            {
               match: /contact\.html/g,
               replacement: '/contato'
             },
