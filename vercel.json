@@ -3,6 +3,7 @@
     { "src": "/", "dest": "https://website-reprotec.vercel.app/index.html" },
     { "src": "/sobre", "dest": "https://website-reprotec.vercel.app/about.html" },
     { "src": "/servicos", "dest": "https://website-reprotec.vercel.app/services.html" },
+    { "src": "/trabalheconosco", "dest": "https://website-reprotec.vercel.app/work.html" },
     { "src": "/contato", "dest": "https://website-reprotec.vercel.app/contact.html" },
     { "handle": "filesystem" },
     { "src": "/.*", "dest": "https://website-reprotec.vercel.app/404.html" }

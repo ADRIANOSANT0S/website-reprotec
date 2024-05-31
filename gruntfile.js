@@ -89,7 +89,7 @@ module.exports = function(grunt) {
             },
             {
               match: /work\.html/g,
-              replacement: '/servicos'
+              replacement: '/trabalheconosco'
             },
             {
               match: /contact\.html/g,
