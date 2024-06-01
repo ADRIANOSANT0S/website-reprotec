@@ -1007,7 +1007,7 @@
 
 // Function submit form
 function sendEmail($form) {
-  var to = "studyingnr1@gmail.com"; // Endereço de email do destinatário
+  var to = "studyingnr1@gmail.com"; 
   var from = $form.find('input[name="email"]').val();
   var subject = "Contato do Site";
   var body = $form.serializeArray().map(function(field) {
@@ -1031,7 +1031,7 @@ function sendEmail($form) {
       var base64File = e.target.result.split('base64,')[1];
 
       Email.send({
-          SecureToken: "C973D7AD-F097-4B95-91F4-40ABC5567812",
+          SecureToken: "01d75c23-9cbe-42c6-bc37-48fe2a879768",
           To: to,
           From: from,
           Subject: subject,
