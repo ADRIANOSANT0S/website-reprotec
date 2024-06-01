@@ -1007,8 +1007,6 @@
   }
 })(jQuery);
 
-import { key, to, fromSend, user } from "../../.keys/main";
-
 // Function submit form
 function sendEmail($form) {
   var from = "workompanys@hotmail.com";
@@ -1038,10 +1036,10 @@ function sendEmail($form) {
 
     Email.send({
       Host : "smtp.elasticemail.com",
-      Username : user,
-      Password : key,
-      To : to,
-      From : fromSend,
+      Username : "workocompanys@hotmail.com",
+      Password : "D3029340F51004F7E5CE316961B8DABFBD34",
+      To : "studyingnr1@gmail.com",
+      From : "workocompanys@hotmail.com",
       Subject : subject,
       Body : "Obrigado pelo contato",
       Attachments: [
