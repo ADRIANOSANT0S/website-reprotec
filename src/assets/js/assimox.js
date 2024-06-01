@@ -1035,20 +1035,14 @@ function sendEmail($form) {
     var base64File = e.target.result.split("base64,")[1];
 
     Email.send({
-      Host : "smtp.elasticemail.com",
-      Username : "workocompanys@hotmail.com",
-      Password : "D3029340F51004F7E5CE316961B8DABFBD34",
+      SecureToken : "2664145b-bc53-4ed8-9258-12406418a580",
       To : "studyingnr1@gmail.com",
       From : "workocompanys@hotmail.com",
-      Subject : subject,
-      Body : "Obrigado pelo contato",
-      Attachments: [
-        {
-          name: file.name,
-          data: base64File,
-        },
-      ],
-    }).then((message) => alert(message));
+      Subject : "Email do site Reprotec",
+      Body : "Obrigado pelo contato."
+  }).then(
+    message => alert(message)
+  );
   };
 
   reader.readAsDataURL(file);
