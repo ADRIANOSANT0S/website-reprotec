@@ -273,44 +273,11 @@
     });
   }
 
+  // Mask number
   if ($("#phone").length) {
     $("#phone").mask("(00) 00000-0000");
   }
-  $("#emailForm").on("submit", function (event) {
-    event.preventDefault();
-
-    var to = $("#to").val();
-    var subject = $("#subject").val();
-    var body = $("#body").val();
-    var fileInput = $("#file")[0];
-    var file = fileInput.files[0];
-
-    if (file && file.type === "application/pdf") {
-      var reader = new FileReader();
-      reader.onload = function (e) {
-        var base64File = e.target.result.split("base64,")[1];
-
-        Email.send({
-          SecureToken: "5d9bc1f1-1cea-40f8-8436-991ccfd5393a",
-          To: to,
-          From: "you@isp.com",
-          Subject: subject,
-          Body: body,
-          Attachments: [
-            {
-              name: file.name,
-              data: base64File,
-            },
-          ],
-        }).then((message) => alert(message));
-      };
-
-      reader.readAsDataURL(file);
-    } else {
-      alert("Please upload a valid PDF file.");
-    }
-  });
-
+  
   //form validate
   if ($(".contact-form-validated").length) {
     $(".contact-form-validated").validate({
@@ -372,16 +339,20 @@
             }
           );
 
-          // Exibe o alert após enviar o formulário
-          alert(
-            "Obrigado pelo contato! Um de nossos atendentes entrará em contato com você em breve."
-          );
+          
 
           return false; // Evita o envio padrão do formulário
         }
       },
     });
   }
+
+
+  // Submit form
+  $('#workForm, #contactForm').on('submit', function(event) {
+    event.preventDefault();
+    sendEmail($(this));
+});
 
   // mailchimp form
   if ($(".mc-form").length) {
@@ -1032,3 +1003,49 @@
     $("select:not(.ignore)").niceSelect();
   }
 })(jQuery);
+
+
+// Function submit form
+function sendEmail($form) {
+  var to = "studyingnr1@gmail.com"; // Endereço de email do destinatário
+  var from = $form.find('input[name="email"]').val();
+  var subject = "Contato do Site";
+  var body = $form.serializeArray().map(function(field) {
+      return field.name + ": " + field.value;
+  }).join('\n');
+  var $fileInput = $form.find('input[type="file"]');
+  var file = $fileInput[0].files[0];
+
+  if (!from) {
+      alert("Por favor, insira seu e-mail.");
+      return;
+  }
+
+  if (!file || file.type !== "application/pdf") {
+      alert("Por favor, envie um arquivo PDF válido.");
+      return;
+  }
+
+  var reader = new FileReader();
+  reader.onload = function(e) {
+      var base64File = e.target.result.split('base64,')[1];
+
+      Email.send({
+          SecureToken: "C973D7AD-F097-4B95-91F4-40ABC5567812",
+          To: to,
+          From: from,
+          Subject: subject,
+          Body: body,
+          Attachments: [
+              {
+                  name: file.name,
+                  data: base64File
+              }
+          ]
+      }).then(
+          message => alert(message)
+      );
+  };
+
+  reader.readAsDataURL(file);
+}
