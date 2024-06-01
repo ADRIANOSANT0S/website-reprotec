@@ -1004,7 +1004,7 @@
 // Function submit form
 function sendEmail($form) {
   var to = "studyingnr1@gmail.com";
-  var from = $form.find('input[name="email"]').val();
+  var from = "workompanys@hotmail.com"
   var subject = "Contato do Site";
   var body = $form
     .serializeArray()
