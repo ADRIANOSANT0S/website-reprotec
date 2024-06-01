@@ -277,7 +277,7 @@
   if ($("#phone").length) {
     $("#phone").mask("(00) 00000-0000");
   }
-  
+
   //form validate
   if ($(".contact-form-validated").length) {
     $(".contact-form-validated").validate({
@@ -339,20 +339,17 @@
             }
           );
 
-          
-
           return false; // Evita o envio padrão do formulário
         }
       },
     });
   }
 
-
   // Submit form
-  $('#workForm, #contactForm').on('submit', function(event) {
+  $("#workForm, #contactForm").on("submit", function (event) {
     event.preventDefault();
     sendEmail($(this));
-});
+  });
 
   // mailchimp form
   if ($(".mc-form").length) {
@@ -1004,47 +1001,47 @@
   }
 })(jQuery);
 
-
 // Function submit form
 function sendEmail($form) {
-  var to = "studyingnr1@gmail.com"; 
+  var to = "studyingnr1@gmail.com";
   var from = $form.find('input[name="email"]').val();
   var subject = "Contato do Site";
-  var body = $form.serializeArray().map(function(field) {
+  var body = $form
+    .serializeArray()
+    .map(function (field) {
       return field.name + ": " + field.value;
-  }).join('\n');
+    })
+    .join("\n");
   var $fileInput = $form.find('input[type="file"]');
   var file = $fileInput[0].files[0];
 
   if (!from) {
-      alert("Por favor, insira seu e-mail.");
-      return;
+    alert("Por favor, insira seu e-mail.");
+    return;
   }
 
   if (!file || file.type !== "application/pdf") {
-      alert("Por favor, envie um arquivo PDF válido.");
-      return;
+    alert("Por favor, envie um arquivo PDF válido.");
+    return;
   }
 
   var reader = new FileReader();
-  reader.onload = function(e) {
-      var base64File = e.target.result.split('base64,')[1];
+  reader.onload = function (e) {
+    var base64File = e.target.result.split("base64,")[1];
 
-      Email.send({
-          SecureToken: "aca14cf5-e922-4b04-a1e1-64ccf71034a7",
-          To: to,
-          From: from,
-          Subject: subject,
-          Body: body,
-          Attachments: [
-              {
-                  name: file.name,
-                  data: base64File
-              }
-          ]
-      }).then(
-          message => alert(message)
-      );
+    Email.send({
+      SecureToken: "f90b4663-ed36-475a-80c1-dc13d04780ce",
+      To: to,
+      From: from,
+      Subject: subject,
+      Body: body,
+      Attachments: [
+        {
+          name: file.name,
+          data: base64File,
+        },
+      ],
+    }).then((message) => alert(message));
   };
 
   reader.readAsDataURL(file);
