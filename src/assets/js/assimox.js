@@ -1031,7 +1031,7 @@ function sendEmail($form) {
       var base64File = e.target.result.split('base64,')[1];
 
       Email.send({
-          SecureToken: "01d75c23-9cbe-42c6-bc37-48fe2a879768",
+          SecureToken: "aca14cf5-e922-4b04-a1e1-64ccf71034a7",
           To: to,
           From: from,
           Subject: subject,
