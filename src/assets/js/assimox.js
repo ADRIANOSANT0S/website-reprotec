@@ -276,47 +276,42 @@
   if ($("#phone").length) {
     $("#phone").mask("(00) 00000-0000");
   }
-
-  ('#emailForm').on('submit', function(event) {
+  $("#emailForm").on("submit", function (event) {
     event.preventDefault();
-    sendEmail();
-});
-});
 
-function sendEmail() {
-var to = $('#to').val();
-var subject = $('#subject').val();
-var body = $('#body').val();
-var fileInput = $('#file')[0];
-var file = fileInput.files[0];
+    var to = $("#to").val();
+    var subject = $("#subject").val();
+    var body = $("#body").val();
+    var fileInput = $("#file")[0];
+    var file = fileInput.files[0];
 
-if (file && file.type === "application/pdf") {
-    var reader = new FileReader();
-    reader.onload = function(e) {
-        var base64File = e.target.result.split('base64,')[1];
+    if (file && file.type === "application/pdf") {
+      var reader = new FileReader();
+      reader.onload = function (e) {
+        var base64File = e.target.result.split("base64,")[1];
 
         Email.send({
-            SecureToken: "5d9bc1f1-1cea-40f8-8436-991ccfd5393a",
-            To: to,
-            From: "you@isp.com",
-            Subject: subject,
-            Body: body,
-            Attachments: [
-                {
-                    name: file.name,
-                    data: base64File
-                }
-            ]
-        }).then(
-            message => alert(message)
-        );
-    };
+          SecureToken: "5d9bc1f1-1cea-40f8-8436-991ccfd5393a",
+          To: to,
+          From: "you@isp.com",
+          Subject: subject,
+          Body: body,
+          Attachments: [
+            {
+              name: file.name,
+              data: base64File,
+            },
+          ],
+        }).then((message) => alert(message));
+      };
 
-    reader.readAsDataURL(file);
-} else {
-    alert("Please upload a valid PDF file.");
-}
+      reader.readAsDataURL(file);
+    } else {
+      alert("Please upload a valid PDF file.");
+    }
+  });
 
+  //form validate
   if ($(".contact-form-validated").length) {
     $(".contact-form-validated").validate({
       // initialize the plugin
