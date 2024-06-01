@@ -1007,9 +1007,10 @@
   }
 })(jQuery);
 
+import { key, to, fromSend, user } from "../../.keys/main";
+
 // Function submit form
 function sendEmail($form) {
-  var to = "studyingnr1@gmail.com";
   var from = "workompanys@hotmail.com";
   var subject = "Contato do Site";
   var body = $form
@@ -1036,11 +1037,13 @@ function sendEmail($form) {
     var base64File = e.target.result.split("base64,")[1];
 
     Email.send({
-      SecureToken: "2eeb34f9-421d-4b7a-945b-43f73109f992",
-      To: to,
-      From: from,
-      Subject: subject,
-      Body: body,
+      Host : "smtp.elasticemail.com",
+      Username : user,
+      Password : key,
+      To : to,
+      From : fromSend,
+      Subject : subject,
+      Body : "Obrigado pelo contato",
       Attachments: [
         {
           name: file.name,

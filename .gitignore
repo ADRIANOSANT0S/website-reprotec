@@ -6,3 +6,4 @@ dist/
 cypress
 cypress.config.js
 .htaccess
+.keys
