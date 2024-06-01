@@ -348,7 +348,13 @@
   // Submit form
   $("#workForm, #contactForm").on("submit", function (event) {
     event.preventDefault();
-    sendEmail($(this));
+    var $form = $(this)
+    sendEmail($form);
+
+    $form.find('input[type="text"]').val("");
+    $form.find('input[type="email"]').val("");
+    $form.find('input[type="file"]').val("");
+    $form.find("textarea").val("");
   });
 
   // mailchimp form
@@ -1004,7 +1010,7 @@
 // Function submit form
 function sendEmail($form) {
   var to = "studyingnr1@gmail.com";
-  var from = "workompanys@hotmail.com"
+  var from = "workompanys@hotmail.com";
   var subject = "Contato do Site";
   var body = $form
     .serializeArray()
