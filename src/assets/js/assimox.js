@@ -319,43 +319,31 @@
           required: "Por favor, insira sua mensagem.",
         },
       },
-      onSubmit: function (form, isValid) {
-        $(form)
-          .find("input, textarea")
-          .each(function () {
-            $(this).val($.trim($(this).val()));
-          });
+      // onSubmit: function (form, isValid) {
+      //   $(form)
+      //     .find("input, textarea")
+      //     .each(function () {
+      //       $(this).val($.trim($(this).val()));
+      //     });
 
-        if (isValid) {
-          // sending value with ajax request
-          $.post(
-            $(form).attr("action"),
-            $(form).serialize(),
-            function (response) {
-              // $(form).parent().find(".result").append(response);
-              $(form).find('input[type="text"]').val("");
-              $(form).find('input[type="email"]').val("");
-              $(form).find("textarea").val("");
-            }
-          );
+      //   if (isValid) {
+      //     // sending value with ajax request
+      //     $.post(
+      //       $(form).attr("action"),
+      //       $(form).serialize(),
+      //       function (response) {
+      //         $(form).parent().find(".result").append(response);
+      //         $(form).find('input[type="text"]').val("");
+      //         $(form).find('input[type="email"]').val("");
+      //         $(form).find("textarea").val("");
+      //       }
+      //     );
 
-          return false; // Evita o envio padrão do formulário
-        }
-      },
+      //     return false; 
+      //   }
+      // },
     });
   }
-
-  // Submit form
-  $("#workForm, #contactForm").on("submit", function (event) {
-    event.preventDefault();
-    var $form = $(this)
-    sendEmail($form);
-
-    $form.find('input[type="text"]').val("");
-    $form.find('input[type="email"]').val("");
-    $form.find('input[type="file"]').val("");
-    $form.find("textarea").val("");
-  });
 
   // mailchimp form
   if ($(".mc-form").length) {
